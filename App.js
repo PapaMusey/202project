@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login from './screens/Login';
 import { ProductsList } from './screens/ProductsList.js';
+import { getProduct, getProducts } from './services/ProductsService';
 import { ProductDetails } from './screens/ProductDetails.js';
 import { Cart } from './screens/Cart.js';
 import { CartIcon } from './components/CartIcon.js';
@@ -15,6 +16,9 @@ function App() {
       <NavigationContainer>
         <Stack.Navigator>
         <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="getProduct" component={getProduct} />
+        <Stack.Screen name="getProducts" component={getProducts} />
+
           <Stack.Screen name='Products' component={ProductsList} 
           options={({ navigation }) => ({
             title: 'Products',
